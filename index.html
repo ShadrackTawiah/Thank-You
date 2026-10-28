@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkofieldJunior - Thank You for Your Trust</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Manrope & DM Sans -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .font-dmsans {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: #101011;
+            color: #F7F4F0;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        ::selection {
+            background-color: #E7833E;
+            color: #101011;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+
+        @keyframes spinSlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spinSlow 20s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#101011] text-[#F7F4F0] antialiased">
+
+    <!-- A. Announcement Bar -->
+    <div
+        class="bg-[#E7833E] text-[#101011] py-2 px-4 text-center text-xs font-manrope font-extrabold tracking-[0.19em] flex items-center justify-center gap-3 uppercase">
+        <span>IT SERVICES</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#101011] inline-block"></span>
+        <span>WEB DEVELOPMENT</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#101011] inline-block"></span>
+        <span>AI</span>
+    </div>
+
+    <!-- B. Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#101011]/95 backdrop-blur-md border-b border-white/10 transition-all">
+        <div class="max-w-[1160px] mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-[#181819] border border-white/15 flex items-center justify-center text-[#E7833E] font-manrope font-extrabold text-lg group-hover:border-[#E7833E] transition-colors shadow-lg">
+                    SJ
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-manrope font-bold text-lg tracking-tight text-[#F7F4F0] group-hover:text-[#E7833E] transition-colors">
+                        SkofieldJunior
+                    </span>
+                    <span class="text-[10px] text-[#AAA6A2] font-dmsans tracking-widest uppercase">
+                        Shadrack Tawiah
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-dmsans text-sm font-medium text-[#AAA6A2]">
+                <a href="#services" class="hover:text-[#F7F4F0] transition-colors cursor-pointer">Services</a>
+                <a href="#next-steps" class="hover:text-[#F7F4F0] transition-colors cursor-pointer">What Happens
+                    Next</a>
+                <a href="#appreciation" class="hover:text-[#F7F4F0] transition-colors cursor-pointer">A Note From Me</a>
+            </nav>
+
+            <!-- Contact Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I%20just%20made%20a%20payment%20and%20would%20like%20to%20discuss%20my%20project."
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-[#E7833E] hover:bg-[#d6722d] text-[#101011] font-manrope font-bold text-xs px-5 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2.5 shadow-lg shadow-[#E7833E]/20">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    Contact Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn"
+                class="md:hidden p-2.5 rounded-xl bg-[#181819] border border-white/15 text-[#F7F4F0] focus:outline-none"
+                aria-label="Toggle menu">
+                <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-[#181819] border-b border-white/10 px-6 py-6 space-y-4 animate-fadeIn font-dmsans">
+            <a href="#services"
+                class="mobile-link block w-full text-left text-base font-medium text-[#AAA6A2] hover:text-[#F7F4F0] py-2">Services</a>
+            <a href="#next-steps"
+                class="mobile-link block w-full text-left text-base font-medium text-[#AAA6A2] hover:text-[#F7F4F0] py-2">What
+                Happens Next</a>
+            <a href="#appreciation"
+                class="mobile-link block w-full text-left text-base font-medium text-[#AAA6A2] hover:text-[#F7F4F0] py-2">A
+                Note From Me</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I%20just%20made%20a%20payment%20and%20would%20like%20to%20discuss%20my%20project."
+                    target="_blank" rel="noopener noreferrer"
+                    class="w-full bg-[#E7833E] text-[#101011] font-manrope font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2.5 shadow-lg">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    WhatsApp Me (0537418840)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-[1160px] mx-auto px-6 py-12 md:py-20 space-y-24 md:space-y-32">
+
+        <!-- C. Hero Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-6">
+            <!-- Left Column -->
+            <div class="lg:col-span-7 space-y-6">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181819] border border-white/10">
+                    <span class="w-2 h-2 rounded-full bg-[#E7833E] animate-pulse"></span>
+                    <span class="font-manrope font-extrabold text-[10px] tracking-[0.19em] text-[#E7833E]">
+                        A PERSONAL THANK-YOU
+                    </span>
+                </div>
+
+                <h1
+                    class="font-manrope font-bold text-4xl sm:text-5xl md:text-[76px] leading-[1.02] tracking-[-0.065em] text-[#F7F4F0]">
+                    Thank you for <span class="text-[#E7833E]">your trust.</span>
+                </h1>
+
+                <p class="font-dmsans text-[#AAA6A2] text-base md:text-lg leading-[1.8] max-w-xl">
+                    I truly appreciate your commitment and decision to work with SkofieldJunior. Your payment has been
+                    received securely through Paystack, and we are ready to build something exceptional together.
+                </p>
+
+                <div class="flex items-center gap-3 text-xs text-[#AAA6A2] font-dmsans py-1">
+                    <svg class="w-4 h-4 text-[#E7833E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>Verified secure checkout via Paystack • Ghana Cedis (GHS)</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I%20just%20made%20a%20payment%20and%20would%20like%20to%20discuss%20my%20project."
+                        target="_blank" rel="noopener noreferrer"
+                        class="bg-[#E7833E] hover:bg-[#d6722d] text-[#101011] font-manrope font-bold text-xs md:text-sm px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-3 shadow-xl shadow-[#E7833E]/20">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        Continue on WhatsApp
+                    </a>
+
+                    <a href="#services"
+                        class="font-manrope font-bold text-xs md:text-sm text-[#F7F4F0] hover:text-[#E7833E] transition-colors px-4 py-3 flex items-center gap-2 group cursor-pointer">
+                        Explore my services
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-[#AAA6A2] font-dmsans">
+                    <div>
+                        <span class="text-[#F7F4F0] font-medium">Category:</span> IT Services, Web & AI
+                    </div>
+                    <div>
+                        <span class="text-[#F7F4F0] font-medium">Location:</span> Ghana 🇬🇭
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Portrait & Visual Composition -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-br from-[#E7833E]/10 to-transparent rounded-3xl border border-[#E7833E]/20 blur-sm">
+                </div>
+
+                <div
+                    class="relative w-full max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden bg-[#181819] border border-white/15 shadow-2xl flex flex-col items-center justify-center group">
+                    <div class="absolute inset-0 w-full h-full overflow-hidden">
+                        <img src="profile.jpg" alt="Shadrack Tawiah - SkofieldJunior"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%23181819\'/%3E%3Ccircle cx=\'200\' cy=\'180\' r=\'80\' fill=\'%232a2a2c\'/%3E%3Cpath d=\'M80 420 C80 320 130 300 200 300 C270 300 320 320 320 420 Z\' fill=\'%232a2a2c\'/%3E%3Ctext x=\'200\' y=\'460\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23E7833E\' text-anchor=\'middle\'%3EShadrack Tawiah%3C/text%3E%3C/svg%3E';" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#101011] via-transparent to-transparent opacity-80">
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute bottom-6 left-6 right-6 bg-[#101011]/90 backdrop-blur-md border border-white/15 p-4 rounded-xl shadow-xl flex items-center justify-between">
+                        <div>
+                            <h3 class="font-manrope font-bold text-sm text-[#F7F4F0]">Shadrack Tawiah</h3>
+                            <p class="font-dmsans text-xs text-[#E7833E]">Founder, SkofieldJunior</p>
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#E7833E]/20 border border-[#E7833E]/40 flex items-center justify-center text-[#E7833E]">
+                            ✓
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute top-6 right-6 bg-[#E7833E] text-[#101011] font-manrope font-extrabold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg">
+                        Thank You
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. Payment Information Card -->
+        <section
+            class="bg-[#181819] border-l-4 border-l-[#E7833E] border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#E7833E]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#E7833E]"></span>
+                        <span class="font-manrope font-extrabold text-xs uppercase tracking-[0.15em] text-[#E7833E]">
+                            PAYMENT NOTICE
+                        </span>
+                    </div>
+                    <h2 class="font-manrope font-bold text-xl md:text-2xl text-[#F7F4F0]">
+                        Have you just made a payment?
+                    </h2>
+                    <p class="font-dmsans text-[#AAA6A2] text-sm md:text-base leading-relaxed max-w-2xl">
+                        Please ensure you retain your Paystack payment receipt or transaction reference. If you haven't
+                        already shared your project brief or specifications, reach out on WhatsApp with your details so
+                        we can get started right away.
+                    </p>
+                </div>
+                <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I%20just%20made%20a%20payment%20and%20here%20is%20my%20receipt."
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-[#101011] hover:bg-black text-[#F7F4F0] border border-white/20 font-manrope font-bold text-xs px-6 py-3.5 rounded-xl transition-all shrink-0 flex items-center gap-2">
+                    Send Receipt on WhatsApp →
+                </a>
+            </div>
+        </section>
+
+        <!-- E. Services Section -->
+        <section id="services" class="space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span
+                    class="font-manrope font-extrabold text-[10px] tracking-[0.19em] text-[#E7833E] uppercase bg-[#181819] px-3.5 py-1.5 rounded-full border border-white/10">
+                    WHAT I OFFER
+                </span>
+                <h2
+                    class="font-manrope font-bold text-3xl md:text-[58px] leading-[1.08] tracking-[-0.055em] text-[#F7F4F0]">
+                    Technology with purpose.
+                </h2>
+                <p class="font-dmsans text-[#AAA6A2] text-base md:text-lg leading-relaxed">
+                    Thoughtful digital solutions for people and businesses ready to move forward.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service Card 1: Web Development -->
+                <div
+                    class="bg-[#181819] border border-white/10 hover:border-[#E7833E]/50 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-xl">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="font-manrope font-extrabold text-xs text-[#E7833E] tracking-widest">01</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#E7833E]/10 border border-[#E7833E]/20 flex items-center justify-center text-[#E7833E] group-hover:bg-[#E7833E] group-hover:text-[#101011] transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="font-manrope font-bold text-xl text-[#F7F4F0]">Web Development</h3>
+                            <p class="font-dmsans text-xs text-[#AAA6A2] leading-relaxed">
+                                High-performance, responsive websites built with modern standards and clean
+                                architecture.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-2">
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Business
+                                    websites</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Landing pages</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>E-commerce
+                                    websites</span>
+                            </div>
+                            <div class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Web applications</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I'm%20interested%20in%20Web%20Development%20services."
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 font-manrope font-bold text-xs text-[#E7833E] hover:text-[#F7F4F0] transition-colors">
+                            Learn more <span class="group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2: AI Services & Training -->
+                <div
+                    class="bg-[#181819] border border-white/10 hover:border-[#E7833E]/50 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-xl">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="font-manrope font-extrabold text-xs text-[#E7833E] tracking-widest">02</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#E7833E]/10 border border-[#E7833E]/20 flex items-center justify-center text-[#E7833E] group-hover:bg-[#E7833E] group-hover:text-[#101011] transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="font-manrope font-bold text-xl text-[#F7F4F0]">AI Services & Training</h3>
+                            <p class="font-dmsans text-xs text-[#AAA6A2] leading-relaxed">
+                                Master practical AI tools and workflows to boost productivity and automate tasks.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-2">
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>AI tool training</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>AI-powered
+                                    content</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Workflow
+                                    assistance</span>
+                            </div>
+                            <div class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Practical AI
+                                    education</span></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I'm%20interested%20in%20AI%20Services%20and%20Training."
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 font-manrope font-bold text-xs text-[#E7833E] hover:text-[#F7F4F0] transition-colors">
+                            Learn more <span class="group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3: IT & Digital Solutions -->
+                <div
+                    class="bg-[#181819] border border-white/10 hover:border-[#E7833E]/50 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group shadow-xl">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="font-manrope font-extrabold text-xs text-[#E7833E] tracking-widest">03</span>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#E7833E]/10 border border-[#E7833E]/20 flex items-center justify-center text-[#E7833E] group-hover:bg-[#E7833E] group-hover:text-[#101011] transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="font-manrope font-bold text-xl text-[#F7F4F0]">IT & Digital Solutions</h3>
+                            <p class="font-dmsans text-xs text-[#AAA6A2] leading-relaxed">
+                                Reliable technical assistance and consulting to keep your digital infrastructure running
+                                smoothly.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-2">
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Technical
+                                    assistance</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Website
+                                    maintenance</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0] pb-2 border-b border-white/5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Digital
+                                    consulting</span>
+                            </div>
+                            <div class="flex items-center gap-3 font-dmsans text-xs text-[#F7F4F0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#E7833E]"></span><span>Technology support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I'm%20interested%20in%20IT%20and%20Digital%20Solutions."
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 font-manrope font-bold text-xs text-[#E7833E] hover:text-[#F7F4F0] transition-colors">
+                            Learn more <span class="group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Appreciation Section -->
+        <section id="appreciation"
+            class="bg-[#F7F2EB] text-[#101011] rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden">
+            <div
+                class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#E7833E]/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-8 space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7833E]/15 border border-[#E7833E]/30">
+                        <span class="font-manrope font-extrabold text-[10px] tracking-[0.19em] text-[#E7833E]">
+                            A NOTE FROM ME
+                        </span>
+                    </div>
+
+                    <h2 class="font-manrope font-bold text-3xl md:text-5xl tracking-tight text-[#101011]">
+                        Your support makes a <span class="text-[#E7833E]">difference.</span>
+                    </h2>
+
+                    <p class="font-dmsans text-[#333333] text-base md:text-lg leading-[1.8]">
+                        Every project I undertake and every client I collaborate with is an opportunity to create
+                        meaningful impact. By choosing SkofieldJunior, you are supporting independent African tech
+                        craftsmanship and innovation based right here in Ghana.
+                    </p>
+
+                    <div
+                        class="pt-4 border-t border-[#101011]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-manrope font-bold text-base text-[#101011]">Shadrack Tawiah</h4>
+                            <p class="font-dmsans text-xs text-[#666666]">Founder & Lead Developer, SkofieldJunior</p>
+                        </div>
+                        <div class="font-manrope italic font-semibold text-sm text-[#E7833E]">
+                            "Learn AI. Create with AI. Grow with AI."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 flex justify-center">
+                    <div
+                        class="w-44 h-44 rounded-full bg-[#101011] border-4 border-[#E7833E] flex flex-col items-center justify-center p-6 text-center shadow-2xl relative">
+                        <div class="absolute inset-0 rounded-full border border-white/20 animate-spin-slow opacity-30">
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#E7833E] flex items-center justify-center text-[#101011] font-manrope font-extrabold text-xl mb-2 shadow-md">
+                            SJ
+                        </div>
+                        <span class="font-manrope font-bold text-xs text-[#F7F4F0]">SkofieldJunior</span>
+                        <span class="text-[9px] text-[#AAA6A2] uppercase tracking-widest mt-0.5">Ghana</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. Customer Next Steps -->
+        <section id="next-steps" class="space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span
+                    class="font-manrope font-extrabold text-[10px] tracking-[0.19em] text-[#E7833E] uppercase bg-[#181819] px-3.5 py-1.5 rounded-full border border-white/10">
+                    PROCESS & TIMELINE
+                </span>
+                <h2
+                    class="font-manrope font-bold text-3xl md:text-[58px] leading-[1.08] tracking-[-0.055em] text-[#F7F4F0]">
+                    Here’s what happens next.
+                </h2>
+            </div>
+
+            <div
+                class="bg-[#181819] border border-white/10 rounded-2xl overflow-hidden shadow-xl divide-y divide-white/10">
+                <div
+                    class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors group">
+                    <div class="flex items-start md:items-center gap-6">
+                        <span
+                            class="font-manrope font-extrabold text-xl md:text-2xl text-[#E7833E] shrink-0 w-12">01</span>
+                        <div class="space-y-1">
+                            <h3
+                                class="font-manrope font-bold text-lg md:text-xl text-[#F7F4F0] group-hover:text-[#E7833E] transition-colors">
+                                Keep your receipt.</h3>
+                            <p class="font-dmsans text-xs md:text-sm text-[#AAA6A2] max-w-2xl leading-relaxed">Save your
+                                Paystack payment confirmation email or screenshot for your records and easy reference.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="self-end md:self-center shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#101011] border border-white/15 flex items-center justify-center text-[#AAA6A2] group-hover:border-[#E7833E] group-hover:text-[#E7833E] transition-all">
+                            →</div>
+                    </div>
+                </div>
+
+                <div
+                    class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors group">
+                    <div class="flex items-start md:items-center gap-6">
+                        <span
+                            class="font-manrope font-extrabold text-xl md:text-2xl text-[#E7833E] shrink-0 w-12">02</span>
+                        <div class="space-y-1">
+                            <h3
+                                class="font-manrope font-bold text-lg md:text-xl text-[#F7F4F0] group-hover:text-[#E7833E] transition-colors">
+                                Share your project details.</h3>
+                            <p class="font-dmsans text-xs md:text-sm text-[#AAA6A2] max-w-2xl leading-relaxed">Send a
+                                message on WhatsApp with your specific requirements, files, or links so we can align on
+                                objectives.</p>
+                        </div>
+                    </div>
+                    <div class="self-end md:self-center shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#101011] border border-white/15 flex items-center justify-center text-[#AAA6A2] group-hover:border-[#E7833E] group-hover:text-[#E7833E] transition-all">
+                            →</div>
+                    </div>
+                </div>
+
+                <div
+                    class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors group">
+                    <div class="flex items-start md:items-center gap-6">
+                        <span
+                            class="font-manrope font-extrabold text-xl md:text-2xl text-[#E7833E] shrink-0 w-12">03</span>
+                        <div class="space-y-1">
+                            <h3
+                                class="font-manrope font-bold text-lg md:text-xl text-[#F7F4F0] group-hover:text-[#E7833E] transition-colors">
+                                Confirm the timeline.</h3>
+                            <p class="font-dmsans text-xs md:text-sm text-[#AAA6A2] max-w-2xl leading-relaxed">We will
+                                review your project scope together and establish a clear, reliable delivery schedule.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="self-end md:self-center shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#101011] border border-white/15 flex items-center justify-center text-[#AAA6A2] group-hover:border-[#E7833E] group-hover:text-[#E7833E] transition-all">
+                            →</div>
+                    </div>
+                </div>
+
+                <div
+                    class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors group">
+                    <div class="flex items-start md:items-center gap-6">
+                        <span
+                            class="font-manrope font-extrabold text-xl md:text-2xl text-[#E7833E] shrink-0 w-12">04</span>
+                        <div class="space-y-1">
+                            <h3
+                                class="font-manrope font-bold text-lg md:text-xl text-[#F7F4F0] group-hover:text-[#E7833E] transition-colors">
+                                Need help? Reach out.</h3>
+                            <p class="font-dmsans text-xs md:text-sm text-[#AAA6A2] max-w-2xl leading-relaxed">My direct
+                                WhatsApp line is always open for questions, urgent assistance, or ongoing consultations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="self-end md:self-center shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#101011] border border-white/15 flex items-center justify-center text-[#AAA6A2] group-hover:border-[#E7833E] group-hover:text-[#E7833E] transition-all">
+                            →</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. Contact Call-to-Action -->
+        <section
+            class="bg-gradient-to-r from-[#E7833E] to-[#d6722d] text-[#101011] rounded-3xl p-8 md:p-16 shadow-2xl text-center space-y-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-2xl mx-auto space-y-4 relative z-10">
+                <span
+                    class="font-manrope font-extrabold text-[10px] tracking-[0.19em] text-[#101011] uppercase bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
+                    DIRECT SUPPORT
+                </span>
+                <h2 class="font-manrope font-bold text-3xl md:text-5xl tracking-tight text-[#101011]">
+                    Have a question? I’m one message away.
+                </h2>
+                <p class="font-dmsans text-[#101011]/85 text-base md:text-lg leading-relaxed">
+                    Whether you need urgent clarification or want to start your next project right now, connect with me
+                    directly on WhatsApp.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10 pt-2">
+                <a href="https://wa.me/233537418840?text=Hello%20Shadrack,%20I%20just%20made%20a%20payment%20and%20would%20like%20to%20discuss%20my%20project."
+                    target="_blank" rel="noopener noreferrer"
+                    class="w-full sm:w-auto bg-[#101011] hover:bg-black text-[#F7F4F0] font-manrope font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-xl flex items-center justify-center gap-3">
+                    <svg class="w-5 h-5 fill-[#E7833E]" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    Open WhatsApp Chat
+                </a>
+
+                <button id="copyBtn"
+                    class="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-[#101011] font-manrope font-bold text-sm px-6 py-4 rounded-xl transition-all border border-[#101011]/20 flex items-center justify-center gap-2 cursor-pointer">
+                    <span id="copyBtnText">Copy Number: 0537418840</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- I. Footer -->
+    <footer class="bg-[#181819] border-t border-white/10 mt-20 pt-16 pb-12">
+        <div class="max-w-[1160px] mx-auto px-6 space-y-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-[#101011] border border-white/15 flex items-center justify-center text-[#E7833E] font-manrope font-extrabold text-lg">
+                            SJ
+                        </div>
+                        <span class="font-manrope font-bold text-xl text-[#F7F4F0]">SkofieldJunior</span>
+                    </div>
+                    <p class="font-dmsans text-xs text-[#AAA6A2] max-w-sm leading-relaxed">
+                        Learn AI. Create with AI. Grow with AI. Professional IT services, web development, and AI
+                        solutions based in Ghana.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="font-manrope font-bold text-xs uppercase tracking-widest text-[#AAA6A2]">Connect &
+                        Socials</span>
+
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#AAA6A2] font-dmsans">
+                <div id="copyrightYear">
+                    © 2026 SkofieldJunior (Shadrack Tawiah). All rights reserved. Ghana 🇬🇭
+                </div>
+                <div>
+                    <a href="#" class="hover:text-[#F7F4F0] transition-colors flex items-center gap-1 cursor-pointer">
+                        Back to top ↑
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('copyrightYear').innerHTML = `© ${new Date().getFullYear()} SkofieldJunior (Shadrack Tawiah). All rights reserved. Ghana 🇬🇭`;
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (!isHidden) {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+            } else {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            }
+        });
+
+        // Close mobile menu on clicking links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            });
+        });
+
+        // Copy Phone Number Interaction
+        const copyBtn = document.getElementById('copyBtn');
+        const copyBtnText = document.getElementById('copyBtnText');
+        const phoneNumber = "0537418840";
+
+        copyBtn.addEventListener('click', () => {
+            // Fallback copy method compatible with sandboxed iframes
+            const textArea = document.createElement("textarea");
+            textArea.value = phoneNumber;
+            textArea.style.position = "fixed";  // Avoid scrolling to bottom
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    copyBtnText.textContent = "✓ Copied 0537418840!";
+                    setTimeout(() => {
+                        copyBtnText.textContent = "Copy Number: 0537418840";
+                    }, 2500);
+                } else {
+                    copyBtnText.textContent = "Failed to copy";
+                }
+            } catch (err) {
+                copyBtnText.textContent = "Failed to copy";
+            }
+
+            document.body.removeChild(textArea);
+        });
+    </script>
+</body>
+
+</html>
